@@ -107,7 +107,7 @@ import { getFirestore, setDoc, addDoc, doc } from "firebase/firestore";
 
 
 
-  await addDoc(doc(db, "Coba"), {
+  addDoc(doc(db, "Coba"), {
   Nama_depan: firstName,
   Nama_belakang: lastName,
   Email: email
