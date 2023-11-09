@@ -93,14 +93,8 @@
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
-  const firebaseConfig = {
-  apiKey: "AIzaSyCDE9RCp2gUIyOG8hUEv5un0JlXqHWowkA",
-  authDomain: "crud-6df8e.firebaseapp.com",
-  projectId: "crud-6df8e",
-  storageBucket: "crud-6df8e.appspot.com",
-  messagingSenderId: "22846946310",
-  appId: "1:22846946310:web:f393dbd1ff1ad9d61f1787"
-};
+  import { firebaseConfig } from '/Input/main.js';
+
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
@@ -114,10 +108,13 @@
   //  var name = document.getElementById('name').value;
 //    var age = document.getElementById('age').value;
 
-   addDoc(collection(db,"users"), {
-    name: "tbui",
-     age: "67"
-
+//   addDoc(collection(db,"users"), {
+//    name: "tbui",
+//     age: "67"
+   await setDoc(doc(db, "users", "taXkqgyhZJQeplUjTlRu"), {
+  name: "Los Angeles",
+  age: "66"
+  
    });
     alert('wwwoooooyyyyyyy');
   });
