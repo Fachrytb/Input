@@ -94,7 +94,6 @@ import { getFirestore, setDoc, addDoc, doc } from "firebase/firestore";
 
   // Initialize Firebase
   const db = getFirestore(app);
-  const app = initializeApp(firebaseConfig);
 
   // Get a reference to the database service
   const database = getDatabase(app);
@@ -116,28 +115,4 @@ import { getFirestore, setDoc, addDoc, doc } from "firebase/firestore";
     alert('saved');
   });
 
-  // read data
-  getData.addEventListener('click', (e) => {
-
-    $('#dataTbl td').remove();
-    var rowNum = 0;
-    const dbRef = ref(database, 'Coba');
-
-    onValue(dbRef, (snapshot) => {
-      snapshot.forEach((childSnapshot) => {
-        const childKey = childSnapshot.key;
-        const childData = childSnapshot.val();
-        // ...
-        rowNum += 1;
-        var row = "<tr><td>" + rowNum + "</td><td>" + childData.Nama_depam + "</td><td>" + childData.Nama_belakang + "</td><td>" + childData.Email + "</td></tr>"
-
-        $(row).appendTo('#dataTbl');
-
-      });
-    }, {
-      onlyOnce: true
-    });
-
-
-  });
 </script>
