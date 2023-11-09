@@ -58,17 +58,14 @@
 
       <form>
         <div class="mb-3">
-          <label class="form-label">NamaDepan</label>
-          <input type="text" placeholder="masukan nama depan" class="form-control" id="first-name">
+          <label class="form-label">Nama</label>
+          <input type="text" placeholder="masukan nama depan" class="form-control" id="name">
         </div>
         <div class="mb-3">
-          <label class="form-label">NamaBelakang</label>
-          <input type="text" placeholder="masukan nama belkang" class="form-control" id="last-name">
+          <label class="form-label">umur</label>
+          <input type="text" placeholder="umur" class="form-control" id="age">
         </div>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="text" placeholder="masukan email" class="form-control" id="email">
-        </div>
+        
         <div class="mb-3">
           <button type="submit" id="submit" class="btn btn-primary">Simpan</button>
         </div>
@@ -98,16 +95,13 @@
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyBFsZGejmODr02P8vVi_CF8tj2XIKcxvY0",
-    authDomain: "test-44aeb.firebaseapp.com",
-    databaseURL: "https://test-44aeb-default-rtdb.firebaseio.com",
-    projectId: "test-44aeb",
-    storageBucket: "test-44aeb.appspot.com",
-    messagingSenderId: "831094657297",
-    appId: "1:831094657297:web:6e0c801e49d1c6c5a13cb0",
-    measurementId: "G-7F8QDYRQ4S"
-    // Your configaration code here
-  };
+  apiKey: "AIzaSyCDE9RCp2gUIyOG8hUEv5un0JlXqHWowkA",
+  authDomain: "crud-6df8e.firebaseapp.com",
+  projectId: "crud-6df8e",
+  storageBucket: "crud-6df8e.appspot.com",
+  messagingSenderId: "22846946310",
+  appId: "1:22846946310:web:f393dbd1ff1ad9d61f1787"
+};
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
@@ -118,16 +112,14 @@
 
   // write data
   submit.addEventListener('click', (e) => {
-    var Nama_depan = document.getElementById('first-name').value;
-    var Nama_belakang = document.getElementById('last-name').value;
-    var Email = document.getElementById('email').value;
+    var name = document.getElementById('name').value;
+    var age = document.getElementById('age').value;
 
 
 
-    addDoc(doc(db, "Coba"), {
-      Nama_depan: Nama_depan,
-      Nama_belakang: Nama_belakang,
-      Email: Email
+    addDoc(doc(db, "Users"), {
+      name: name,
+      age: age
 
     });
     alert('saved');
