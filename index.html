@@ -59,15 +59,15 @@
       <form>
         <div class="mb-3">
           <label class="form-label">NamaDepan</label>
-          <input type="text" class="form-control" id="first-name">
+          <input type="text" placeholder="masukan nama depan" class="form-control" id="first-name">
         </div>
         <div class="mb-3">
           <label class="form-label">NamaBelakang</label>
-          <input type="text" class="form-control" id="last-name">
+          <input type="text" placeholder="masukan nama belkang" class="form-control" id="last-name">
         </div>
         <div class="mb-3">
           <label class="form-label">Email</label>
-          <input type="text" class="form-control" id="email">
+          <input type="text" placeholder="masukan email" class="form-control" id="email">
         </div>
         <div class="mb-3">
           <button type="submit" id="submit" class="btn btn-primary">Simpan</button>
@@ -111,6 +111,7 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
   // Get a reference to the database service
   
@@ -124,9 +125,9 @@
 
 
     addDoc(doc(db, "Coba"), {
-      Nama_depan: first-Name,
-      Nama_belakang: last-Name,
-      Email: email
+      Nama_depan: Nama_depan,
+      Nama_belakang: Nama_belakang,
+      Email: Email
 
     });
     alert('saved');
