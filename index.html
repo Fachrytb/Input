@@ -82,14 +82,11 @@
     </ul>
     <p class="text-center text-body-secondary">&copy; 2023 Tokepedia</p>
   </footer>
-
-
-</body>
 <script type="module">
   // Import the functions you need from the SDKs you need
 
-  import { getFirestore, setDoc, addDoc,doc, collection } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js';
-  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js';
+  import { getFirestore, setDoc, addDoc,getDocs, collection } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js';
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
   
 
   //  Add SDKs for Firebase products that you want to use
@@ -117,14 +114,20 @@
     var name = document.getElementById('name').value;
     var age = document.getElementById('age').value;
 
+const docRef = addDoc(collection(db, "users"), {
+  name: name,
+  age: age
+});
+console.log("Document written with ID: ", docRef.id);
+ //   addDoc(collection(db,"users"), {
+//      name: name,
+     // age: age
 
-
-    addDoc(collection(db,"users"), {
-      name: name,
-      age: age
-
-    });
-    alert('wwwoooooyyyyyyy');
+  //  });
+//    alert('wwwoooooyyyyyyy');
   });
 </script>
+
+</body>
+
 </html>
