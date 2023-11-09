@@ -96,7 +96,7 @@ import { getFirestore, setDoc, addDoc, doc } from "firebase/firestore";
   };
 
   // Initialize Firebase
-  const db = getFirestore(app);
+  const app = initializeApp(firebaseConfig);
 
   // Get a reference to the database service
   const database = getDatabase(app);
