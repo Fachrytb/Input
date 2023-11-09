@@ -111,20 +111,15 @@
 
   // write data
   submit.addEventListener('click', (e) => {
-    var name = document.getElementById('name').value;
-    var age = document.getElementById('age').value;
+  //  var name = document.getElementById('name').value;
+//    var age = document.getElementById('age').value;
 
-const docRef = addDoc(collection(db, "users"), {
-  name: name,
-  age: age
-});
-console.log("Document written with ID: ", docRef.id);
- //   addDoc(collection(db,"users"), {
-//      name: name,
-     // age: age
+   addDoc(collection(db,"users"), {
+    name: "tbui",
+     age: "67"
 
-  //  });
-//    alert('wwwoooooyyyyyyy');
+   });
+    alert('wwwoooooyyyyyyy');
   });
 </script>
 
